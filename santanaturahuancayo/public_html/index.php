@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,22 +8,22 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Birthstone&family=Festive&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Birthstone&family=Festive&display=swap" rel="stylesheet">
-    <title>Directv Agente Autorizado</title>
+    <title>Santa Natura Huancayo</title>
     <link rel="preload" href="css/style.css" as="style">
     <link href="css/style.css" rel="stylesheet">
 </head>
-<body herf= "img/uno.jpg" >
+<body background="img/uno.jpg"> 
     <header class="dtv">
-        <img class="logo" src="img/directvlogo.png">
+        <img class="logo" src="img/logo.png">
     </header>
 
     <!--   OCULTAR CODIGO  -->
 <div class="nav-bg">
     <nav class="navegacion-principal contenedor">
-        <a href="#">Descripción</a>
-        <a href="#">Servicios</a>
-        <a href="#">Contacto</a>
-        <a href="#">Guia de Canales</a>
+        <a href="#">DESCRIPCIÓN</a>
+        <a href="#">PRODUCTOS</a>
+        <a href="#">PROMOCIONES</a>
+        <a href="#">CONTACTANOS</a>
 
     </nav>
 </div>
@@ -38,37 +38,34 @@
 
     <main class="contenedor sombra">
         <br>
-        <h2 class="titulo2">Servicios</h2>
+        <h2 class="titulo2" id="oferta">OFERTAS DEL MES</h2>
 
         <div class="ofertas">
     
-        <section class="productos">
-            <h3>Post Pago</h3>
+        <section class="productos">            
             <div class="img">
                 <img class="imagen" src="img/11.jpg">
             </div>
-            <a class="boton" href="">Solicitar</a>
+            <a class="boton" id="solicitar" href="">Solicitar</a>
         </section>
         
         <section class="productos">
-            <h3>Pre Pago</h3>
             <div class="img">
                 <img class="imagen2" src="img/22.jpg">
             </div>
-            <a class="boton" href="">solicitar</a>
+            <a class="boton" id="solicitar" href="">solicitar</a>
         </section>
         
         <section class="productos">
-            <h3>Servicio Técnico</h3>
             <div class="img">
                 <img class="imagen3" src="img/33.jpg">
             </div>
-            <a class="boton" href="">solicitar</a>
+            <a class="boton" id="solicitar" href="">solicitar</a>
         </section>
     </div> 
     
         <section>
-            <h2 class="titulo2">Contacto</h2>
+            <h2 class="titulo2" id="oferta">Contacto</h2>
 
             <form class="formulario">
                 <fieldset>
