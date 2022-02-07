@@ -1,8 +1,8 @@
 :root {
-    --blanco: #ffffff;
+    --blanco: #e7e7e7f3;
     --oscuro: #b5dc67;
     --primario: #c0b5b1;
-    --secundario: green;
+    --secundario: rgb(6, 63, 6);
     --gris: #757575;
     --grisclaro: #000000;
     --grisMasClaro: #c0bebe;
@@ -24,7 +24,7 @@ html {
     padding-top: 1rem;
 }
 #oferta{
-    color: white;
+    color: rgba(255, 255, 255, 0.774);
 }
 
 #solicitar{
@@ -170,11 +170,11 @@ h2,h3 {
 }
 
 .tienda {
-    background-image: url(../img/índice.jpg);
+    background-image: url(../img/fondo2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 550px;
-    position: relative;
+    height: 650px;
+    position: center;
     margin-bottom: 8rem;
 }
 .contenido-tienda {

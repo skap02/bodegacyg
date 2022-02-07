@@ -12,7 +12,7 @@
     <link rel="preload" href="css/style.css" as="style">
     <link href="css/style.css" rel="stylesheet">
 </head>
-<body background="img/uno.jpg"> 
+<body> 
     <header class="dtv">
         <img class="logo" src="img/logo.png">
     </header>
@@ -27,13 +27,15 @@
 
     </nav>
 </div>
-
+ 
     <section class="tienda">
         <div class="contenido-tienda">
-        <a class="boton" href="">facebook</a>
-        <a class="boton" href="">whatsapp</a>
+<!--    <a class="boton" href="">facebook</a>
+        <a class="boton" href="">whatsapp</a>   -->
 
         </div>
+
+        
     </section>
 
     <main class="contenedor sombra">
@@ -44,21 +46,21 @@
     
         <section class="productos">            
             <div class="img">
-                <img class="imagen" src="img/11.jpg">
+                <img class="imagen" src="img/111.jpg">
             </div>
             <a class="boton" id="solicitar" href="">Solicitar</a>
         </section>
         
         <section class="productos">
             <div class="img">
-                <img class="imagen2" src="img/22.jpg">
+                <img class="imagen2" src="img/222.jpg">
             </div>
             <a class="boton" id="solicitar" href="">solicitar</a>
         </section>
         
         <section class="productos">
             <div class="img">
-                <img class="imagen3" src="img/33.jpg">
+                <img class="imagen3" src="img/333.jpg">
             </div>
             <a class="boton" id="solicitar" href="">solicitar</a>
         </section>
@@ -85,11 +87,7 @@
                         <label>Correo</label>
                         <input class="input-text" type="email" placeholder="Tu correo">
                     </div>
-                    
-                    <div class="campos">
-                        <label>Dirección donde desea la instalación</label>
-                        <input class="input-text" type="email" placeholder="Tu correo">
-                    </div>
+
 
                     <div class="campos">
                         <label>Mensaje</label>
