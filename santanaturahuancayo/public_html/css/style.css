@@ -1,3 +1,4 @@
+/* Colores a escoger */
 :root {
     --blanco: #e7e7e7f3;
     --oscuro: #b5dc67;
@@ -7,26 +8,26 @@
     --grisclaro: #000000;
     --grisMasClaro: #c0bebe;
     --oscuroclaro: #424242;
-
 }
-
+/* Estilos generales */
 html {
     font-size: 62.5%;
 }
 *, *:before, *:after {
     box-sizing: inherit;
 }
-
+/* Estilos para el logo */
 .dtv .logo {
     height: 10rem;
     width: 26rem;
     padding: 3rem;
     padding-top: 1rem;
 }
+/* Estilos con id: Oferta */
 #oferta{
     color: rgba(255, 255, 255, 0.774);
 }
-
+/* Estilos para id: Solicitar */
 #solicitar{
     background-color: #6fd600;
 }
@@ -47,7 +48,7 @@ body {
     /*background-image: url(../img/portada.jpg);*/
     background-size: cover;
     background-repeat: no-repeat;
-    background position: center center;
+    /*background position: center center;
     /*background-attachment: fixed;      desliza*/ 
 }
 

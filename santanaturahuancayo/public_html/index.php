@@ -13,6 +13,7 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body> 
+    <!-- Logo del proyecto -->
     <header class="dtv">
         <img class="logo" src="img/logo.png">
     </header>
@@ -27,37 +28,34 @@
 
     </nav>
 </div>
- 
+    <!-- Imagen de presentación  -->
     <section class="tienda">
         <div class="contenido-tienda">
 <!--    <a class="boton" href="">facebook</a>
-        <a class="boton" href="">whatsapp</a>   -->
-
+        <a class="boton" href="">whatsapp</a>   -->   
         </div>
-
-        
     </section>
-
+    <!--  Productos en oferta  -->
     <main class="contenedor sombra">
         <br>
         <h2 class="titulo2" id="oferta">OFERTAS DEL MES</h2>
 
         <div class="ofertas">
-    
+    <!-- Primera iamgen -->
         <section class="productos">            
             <div class="img">
                 <img class="imagen" src="img/111.jpg">
             </div>
             <a class="boton" id="solicitar" href="">Solicitar</a>
         </section>
-        
+    <!-- Segunda imagen -->   
         <section class="productos">
             <div class="img">
                 <img class="imagen2" src="img/222.jpg">
             </div>
             <a class="boton" id="solicitar" href="">solicitar</a>
         </section>
-        
+    <!-- Tercera imagen -->    
         <section class="productos">
             <div class="img">
                 <img class="imagen3" src="img/333.jpg">
@@ -65,7 +63,7 @@
             <a class="boton" id="solicitar" href="">solicitar</a>
         </section>
     </div> 
-    
+    <!-- Formulario -->
         <section>
             <h2 class="titulo2" id="oferta">Contacto</h2>
 
@@ -74,26 +72,28 @@
                     <legend>Rellene el Formulario</legend> 
                 <div class="contenedor-campos">
                     <div class="campos">
+                    <!-- Nombre -->    
                         <label>Nombre</label>
                         <input class="input-text" type="text" placeholder="Tu Nombre">
                     </div>
-                    
+                    <!-- Telefono -->
                     <div class="campos">
                         <label>Telefono</label>
                         <input class="input-text" type="tel" placeholder="Tu Teléfono">
                     </div>
-                    
+                    <!-- Correo -->
                     <div class="campos">
                         <label>Correo</label>
                         <input class="input-text" type="email" placeholder="Tu correo">
                     </div>
-
-
+                    <!-- Mensaje -->
                     <div class="campos">
                         <label>Mensaje</label>
                         <textarea class="input-text"></textarea>
                     </div>
-                </div> <!--contenedor de campos-->
+                </div>
+
+                <!--contenedor de campos-->
             
                 <div class="alinear-derecha flex">
                     <input class="boton w-sm-100" type="submit" value="Enviar">
@@ -104,6 +104,7 @@
             <br>
         </section>
     </main>  
+    <!-- Final del documento -->
     <footer>
         <p>EL FIN JUSTIFICA LOS MEDIOS</p>
     </footer>  
