@@ -8,15 +8,17 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Birthstone&family=Festive&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Birthstone&family=Festive&display=swap" rel="stylesheet">
-    <title>Santa Natura Huancayo</title>
+    <title>Bodega CyG</title>
     <link rel="preload" href="css/style.css" as="style">
     <link href="css/style.css" rel="stylesheet">
+    <body bgcolor="black"></body>
+    
 </head>
 <body> 
     <!-- Logo del proyecto -->
-    <header class="dtv">
-        <img class="logo" src="img/logo.png">
-    </header>
+<!--    <header class="dtv">
+        <img class="logo" src="img/logo1.png">
+    </header>    -->
 
     <!--   OCULTAR CODIGO  -->
 <div class="nav-bg">
@@ -31,8 +33,8 @@
     <!-- Imagen de presentación  -->
     <section class="tienda">
         <div class="contenido-tienda">
-<!--    <a class="boton" href="">facebook</a>
-        <a class="boton" href="">whatsapp</a>   -->   
+        <!--  <a class="boton" href="">facebook</a>
+        <a class="boton" href="">whatsapp</a>   -->
         </div>
     </section>
     <!--  Productos en oferta  -->
@@ -44,23 +46,23 @@
     <!-- Primera iamgen -->
         <section class="productos">            
             <div class="img">
-                <img class="imagen" src="img/111.jpg">
+                <img class="imagen" src="img/1.jpg">
             </div>
-            <a class="boton" id="solicitar" href="">Solicitar</a>
+            <a class="boton" id="solicitar" href="">COMPRAR</a>
         </section>
     <!-- Segunda imagen -->   
         <section class="productos">
             <div class="img">
-                <img class="imagen2" src="img/222.jpg">
+                <img class="imagen2" src="img/2.jpg">
             </div>
-            <a class="boton" id="solicitar" href="">solicitar</a>
+            <a class="boton" id="solicitar" href="">COMPRAR</a>
         </section>
     <!-- Tercera imagen -->    
         <section class="productos">
             <div class="img">
-                <img class="imagen3" src="img/333.jpg">
+                <img class="imagen3" src="img/3.jpg">
             </div>
-            <a class="boton" id="solicitar" href="">solicitar</a>
+            <a class="boton" id="solicitar" href="">COMPRAR</a>
         </section>
     </div> 
     <!-- Formulario -->

@@ -1,9 +1,9 @@
 /* Colores a escoger */
 :root {
-    --blanco: #e7e7e7f3;
-    --oscuro: #b5dc67;
+    --blanco: #16020267;
+    --oscuro: #167e60;
     --primario: #c0b5b1;
-    --secundario: rgb(6, 63, 6);
+    --secundario: #13ecaf;
     --gris: #757575;
     --grisclaro: #000000;
     --grisMasClaro: #c0bebe;
@@ -25,11 +25,11 @@ html {
 }
 /* Estilos con id: Oferta */
 #oferta{
-    color: rgba(255, 255, 255, 0.774);
+    color: #00fdb5;
 }
 /* Estilos para id: Solicitar */
 #solicitar{
-    background-color: #6fd600;
+    background-color: #00fdb5;
 }
 
 svg .facebook {
@@ -79,12 +79,11 @@ h2,h3 {
 
 .contenedor {
     max-width: 120rem;
-    margin-top: -3rem;
+    /*margin-top: -5rem;*/
     margin-right: auto;
     margin-bottom: 0;
     margin-left: auto;
 }
-
 
 .boton {
     background-color: var(--secundario);
@@ -96,7 +95,7 @@ h2,h3 {
     /*text-transform: uppercase;*/
     font-weight: bold;
     border-radius: 5rem;
-    width: 90px;
+    width: 70px;
     text-align: center;
     border: none;
     /*margin-left: 116rem;
@@ -114,10 +113,10 @@ h2,h3 {
 }
 
 .sombra {
-    -webkit-box-shadow: 0px 5px 25px 0px rgba(0,0,0,0.64);
-    -moz-box-shadow: 0px 5px 25px 0px rgba(0,0,0,0.64);
-    box-shadow: 0px 5px 25px 0px rgba(0,0,0,0.64);
-    background-color: rgba( 0,0,0, .8);  /* fondo oscuro trasparente*/
+    -webkit-box-shadow: 0px 5px 25px 0px rgba(88, 86, 86, 0.64);
+    -moz-box-shadow: 0px 5px 25px 0px rgba(77, 74, 74, 0.64);
+    box-shadow: 0px 5px 25px 0px rgba(24, 23, 23, 0.64);
+    background-color: rgba(240, 235, 235, 0.315);  /* fondo oscuro trasparente*/
     border-radius: 2rem;
 }
 /*utilidades*/
@@ -171,24 +170,16 @@ h2,h3 {
 }
 
 .tienda {
-    background-image: url(../img/fondo2.jpg);
+    background-image: url(../img/fondo01.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 650px;
+    height: 400px;
     position: center;
     margin-bottom: 8rem;
 }
 .contenido-tienda {
-    position: absolute;
-    /*background-image: url(../img/portada.jpg);*/
-    /*background-color: rgba( 0,0,0, .6);*/
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    padding-top: 38rem;
-    padding-left: 73rem;
-    
+    /*position: absolute;*/
+
     
 }
 .contenido-tienda p {
@@ -259,7 +250,7 @@ h2,h3 {
 }
 
 .formulario {
-    background-color: var(--gris);
+    background-color: var(--grisclaro);
     width: min( 60rem, 100%);
     margin: 0 auto;
     padding: 2rem;
@@ -276,7 +267,7 @@ h2,h3 {
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 2rem;
-    color: var(--blanco);
+    color: var(--grisMasClaro);
 }
 
 .contenedor-campos {
@@ -287,7 +278,7 @@ h2,h3 {
 }
 
 .campos label {
-    color: var(--blanco);
+    color: var(--grisMasClaro);
     font-weight: bold;
     margin-bottom: .5rem;
     display: block;
