@@ -7,7 +7,9 @@ use BinaryCabin\LaravelUUID\Traits\HasUUID;
 
 class Producto extends Model
 {
+
 	use HasUUID;
+
 
 	protected $table = 'productos';
 	protected $primaryKey = "id";
@@ -15,15 +17,3 @@ class Producto extends Model
 	protected $keyType = 'string';
 	protected $uuidFieldName = 'id';
 }
-
-
-
-
-
-
-
-
-
-
-
-

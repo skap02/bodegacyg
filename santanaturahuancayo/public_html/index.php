@@ -1,112 +1,55 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preload" href="css/normalize.css" as="style">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link href="https://fonts.googleapis.com/css2?family=Birthstone&family=Festive&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Birthstone&family=Festive&display=swap" rel="stylesheet">
-    <title>Santa Natura Huancayo</title>
-    <link rel="preload" href="css/style.css" as="style">
-    <link href="css/style.css" rel="stylesheet">
-</head>
-<body> 
-    <!-- Logo del proyecto -->
-    <header class="dtv">
-        <img class="logo" src="img/logo.png">
-    </header>
+<?php
 
-    <!--   OCULTAR CODIGO  -->
-<div class="nav-bg">
-    <nav class="navegacion-principal contenedor">
-        <a href="#">DESCRIPCIÓN</a>
-        <a href="#">PRODUCTOS</a>
-        <a href="#">PROMOCIONES</a>
-        <a href="#">CONTACTANOS</a>
+use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Http\Request;
 
-    </nav>
-</div>
-    <!-- Imagen de presentación  -->
-    <section class="tienda">
-        <div class="contenido-tienda">
-<!--    <a class="boton" href="">facebook</a>
-        <a class="boton" href="">whatsapp</a>   -->   
-        </div>
-    </section>
-    <!--  Productos en oferta  -->
-    <main class="contenedor sombra">
-        <br>
-        <h2 class="titulo2" id="oferta">OFERTAS DEL MES</h2>
+define('LARAVEL_START', microtime(true));
 
-        <div class="ofertas">
-    <!-- Primera iamgen -->
-        <section class="productos">            
-            <div class="img">
-                <img class="imagen" src="img/111.jpg">
-            </div>
-            <a class="boton" id="solicitar" href="">Solicitar</a>
-        </section>
-    <!-- Segunda imagen -->   
-        <section class="productos">
-            <div class="img">
-                <img class="imagen2" src="img/222.jpg">
-            </div>
-            <a class="boton" id="solicitar" href="">solicitar</a>
-        </section>
-    <!-- Tercera imagen -->    
-        <section class="productos">
-            <div class="img">
-                <img class="imagen3" src="img/333.jpg">
-            </div>
-            <a class="boton" id="solicitar" href="">solicitar</a>
-        </section>
-    </div> 
-    <!-- Formulario -->
-        <section>
-            <h2 class="titulo2" id="oferta">Contacto</h2>
+/*
+|--------------------------------------------------------------------------
+| Check If The Application Is Under Maintenance
+|--------------------------------------------------------------------------
+|
+| If the application is in maintenance / demo mode via the "down" command
+| we will load this file so that any pre-rendered content can be shown
+| instead of starting the framework, which could cause an exception.
+|
+*/
 
-            <form class="formulario">
-                <fieldset>
-                    <legend>Rellene el Formulario</legend> 
-                <div class="contenedor-campos">
-                    <div class="campos">
-                    <!-- Nombre -->    
-                        <label>Nombre</label>
-                        <input class="input-text" type="text" placeholder="Tu Nombre">
-                    </div>
-                    <!-- Telefono -->
-                    <div class="campos">
-                        <label>Telefono</label>
-                        <input class="input-text" type="tel" placeholder="Tu Teléfono">
-                    </div>
-                    <!-- Correo -->
-                    <div class="campos">
-                        <label>Correo</label>
-                        <input class="input-text" type="email" placeholder="Tu correo">
-                    </div>
-                    <!-- Mensaje -->
-                    <div class="campos">
-                        <label>Mensaje</label>
-                        <textarea class="input-text"></textarea>
-                    </div>
-                </div>
+if (file_exists($maintenance = __DIR__.'/../laravel/storage/framework/maintenance.php')) {
+    require $maintenance;
+}
 
-                <!--contenedor de campos-->
-            
-                <div class="alinear-derecha flex">
-                    <input class="boton w-sm-100" type="submit" value="Enviar">
-                </div>
-               
-                </fieldset>
-            </form>
-            <br>
-        </section>
-    </main>  
-    <!-- Final del documento -->
-    <footer>
-        <p>EL FIN JUSTIFICA LOS MEDIOS</p>
-    </footer>  
-</body>
-</html>
+/*
+|--------------------------------------------------------------------------
+| Register The Auto Loader
+|--------------------------------------------------------------------------
+|
+| Composer provides a convenient, automatically generated class loader for
+| this application. We just need to utilize it! We'll simply require it
+| into the script here so we don't need to manually load our classes.
+|
+*/
+
+require __DIR__.'/../laravel/vendor/autoload.php';
+
+/*
+|--------------------------------------------------------------------------
+| Run The Application
+|--------------------------------------------------------------------------
+|
+| Once we have the application, we can handle the incoming request using
+| the application's HTTP kernel. Then, we will send the response back
+| to this client's browser, allowing them to enjoy our application.
+|
+*/
+
+$app = require_once __DIR__.'/../laravel/bootstrap/app.php';
+
+$kernel = $app->make(Kernel::class);
+
+$response = $kernel->handle(
+    $request = Request::capture()
+)->send();
+
+$kernel->terminate($request, $response);
