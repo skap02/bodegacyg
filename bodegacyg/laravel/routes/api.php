@@ -23,5 +23,5 @@ Route::get("/v1/producto",[ProductoController::class,"getAll"]);
 Route::get("/v1/producto/{id}",[ProductoController::class,"getItem"]);
 Route::post("/v1/producto",[ProductoController::class,"store"]);
 Route::put("/v1/producto",[ProductoController::class,"update"]);
-Route::patch("/v1/producto",[ProductoController::class,"patch"]);
+Route::patch("/v1/producto/{id}",[ProductoController::class,"patch"]);
 Route::delete("/v1/producto/{id}",[ProductoController::class,"delete"]);
