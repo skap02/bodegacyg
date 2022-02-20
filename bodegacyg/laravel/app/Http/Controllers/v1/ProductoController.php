@@ -49,6 +49,7 @@ class ProductoController extends Controller
 		$producto = new Producto();
 		$producto->codigo = $request->codigo;
 		$producto->nombre = $request->nombre;
+		$producto->cantidad = $request->cantidad;
 		$producto->precio = $request->precio;
 		$producto->save();
 
@@ -66,6 +67,7 @@ class ProductoController extends Controller
 
 		$producto->codigo = $request->codigo;
 		$producto->nombre = $request->nombre;
+		$producto->cantidad = $request->cantidad;
 		$producto->precio = $request->precio;
 		$producto->save();
 
@@ -88,6 +90,9 @@ class ProductoController extends Controller
 		if(isset($request->nombre))
 		$producto->nombre = $request->nombre;
 
+		if(isset($request->cantidad))
+		$producto->cantidad = $request->cantidad;
+
 		if(isset($request->precio))
 		$producto->precio = $request->precio;
 
@@ -95,7 +100,7 @@ class ProductoController extends Controller
 
 		$response->data = $producto;
 
-		return response()->json($producto,200);
+		return response()->json($response,200);
 	}
 
 	function delete($id)
