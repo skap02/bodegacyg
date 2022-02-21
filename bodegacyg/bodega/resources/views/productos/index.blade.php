@@ -17,14 +17,18 @@
     <tbody>
         @foreach ($productos as $producto)
         <tr>
-            <td>{{$producto->id}}</td>
-            <td>{{$producto->codigo}}</td>
-            <td>{{$producto->descripcion}}</td>
-            <td>{{$producto->cantidad}}</td>
-            <td>{{$producto->precio}}</td>
+            <td>{{$producto->ID}}</td>
+            <td>{{$producto->Codigo}}</td>
+            <td>{{$producto->Descripcion}}</td>
+            <td>{{$producto->Cantidad}}</td>
+            <td>{{$producto->Precio}}</td>
             <td>
-                <a class="btn btn-info">Editar</a>
-                <button class="btn btn-danger">borrar</button>
+                <form action="{{ route ('productos.destroy',$producto->id)}}" method="POST">
+                <a href="/productos/{{ $producto->id}}/edit" class="btn btn-info">Editar</a>
+                @csrf 
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">borrar</button>
+                </form>
             </td>
         </tr>
         @endforeach

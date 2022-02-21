@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::resource('productos','App\Http\Controllers\ProductosController');
+Route::resource('productos','App\Http\Controllers\ProductoController');
 /*codigo para subir productos */
-
+Route::middleware(['auth:sanctum','verified'])->get('\dashboard', function (){
+    return view('dashboard');
+})->name('dashboard');
 
