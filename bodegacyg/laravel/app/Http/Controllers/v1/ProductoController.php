@@ -8,12 +8,33 @@ use Illuminate\Http\Request;
 
 class ProductoController extends Controller
 {
-	function getAll()
+	function getAll(Request $request)
 	{
+
+		$search = $request->search;
+
+		$fecha_inicio = $request->fecha_inicio;
+		$fecha_fin = $request->fecha_fin;
+
+		if(!isset($search))
+		$search="%";
+		else 
+		$search="%".$search."%";
+
+
 		$response = new \stdClass();
 		$response->success=true;
 
-		$productos = Producto::all();
+		//$producto = Producto::all(); Recupera todos los elementos de la tabla
+		$productos = Producto::where(function($q) use ($search){
+			$q->where("codigo","like",$search)
+			->orWhere("nombre","like",$search);
+		})
+		
+		->where("created_at",">=",$fecha_inicio. "2022:02:")
+		->where("created_at","<=",$fecha_fin)
+		->get();
+
 
 		$response->data=$productos;
 
@@ -49,8 +70,8 @@ class ProductoController extends Controller
 		$producto = new Producto();
 		$producto->codigo = $request->codigo;
 		$producto->nombre = $request->nombre;
-		$producto->cantidad = $request->cantidad;
 		$producto->precio = $request->precio;
+		$producto->stock = $request->stock;
 		$producto->save();
 
 		$response->data=$producto;
@@ -67,8 +88,8 @@ class ProductoController extends Controller
 
 		$producto->codigo = $request->codigo;
 		$producto->nombre = $request->nombre;
-		$producto->cantidad = $request->cantidad;
 		$producto->precio = $request->precio;
+		$producto->stock = $request->stock;
 		$producto->save();
 
 		$response->data = $producto;
@@ -90,17 +111,17 @@ class ProductoController extends Controller
 		if(isset($request->nombre))
 		$producto->nombre = $request->nombre;
 
-		if(isset($request->cantidad))
-		$producto->cantidad = $request->cantidad;
-
 		if(isset($request->precio))
-		$producto->precio = $request->precio;
+		$producto->prcio = $request->precio;
+
+		if(isset($request->stock))
+		$producto->stock = $request->stock;
 
 		$producto->save();
 
 		$response->data = $producto;
 
-		return response()->json($response,200);
+		return response()->json($producto,200);
 	}
 
 	function delete($id)
