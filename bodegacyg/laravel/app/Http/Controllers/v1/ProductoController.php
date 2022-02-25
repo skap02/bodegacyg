@@ -16,23 +16,49 @@ class ProductoController extends Controller
 		$fecha_inicio = $request->fecha_inicio;
 		$fecha_fin = $request->fecha_fin;
 
+		$categoria = $request->categorias;
+
+		if(!isset($categoria))
+		$categoria="%";
+		else
+		$categoria="%".$categoria."%";
+
+		if(!isset($fecha_inicio))
+		$fecha_inicio="2022-01-01 00:00:00";
+
+		if(!isset($fecha_fin))
+		$fecha_fin="3000-01-01 23:59:59";
+
 		if(!isset($search))
 		$search="%";
 		else 
 		$search="%".$search."%";
-
-
+		
 		$response = new \stdClass();
 		$response->success=true;
 
 		//$producto = Producto::all(); Recupera todos los elementos de la tabla
 		$productos = Producto::where(function($q) use ($search){
-			$q->where("codigo","like",$search)
-			->orWhere("nombre","like",$search);
+			$q->where("productos.codigo","like",$search)
+			->orWhere("productos.nombre","like",$search);
 		})
+
+		->select("productos.*","categorias.nombre as categorias_nombre")
+		->with("categorias")
+		->where("productos.created_at",">=",$fecha_inicio. " 00:00:00")
+		->where("productos.created_at","<=",$fecha_fin. " 23:59:59")
 		
-		->where("created_at",">=",$fecha_inicio. "2022:02:")
-		->where("created_at","<=",$fecha_fin)
+		->where(function($q) use($categoria){
+
+			if($categoria!="%")
+			{
+				$q->where("categorias.nombre","like",$categoria);
+			}
+		})
+
+		//->where("categoria.nombre","like",$categoria)
+
+		->leftJoin("categorias","productos.categorias_id","=","categorias.id")
 		->get();
 
 
@@ -57,8 +83,8 @@ class ProductoController extends Controller
 		$response = new \stdClass();
 		$response->success=true;
 
-		$producto=Producto::where("codigo","=",$request->codigo)
-		->orWhere("nombre","=",$request->nombre)
+		$producto=Producto::where("productos.codigo","=",$request->codigo)
+		->orWhere("productos.nombre","=",$request->nombre)
 		->first();
 		if($producto){
 			$response->success=false;
