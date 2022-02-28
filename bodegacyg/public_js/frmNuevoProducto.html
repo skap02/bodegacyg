@@ -15,11 +15,11 @@
     <label>Nombre:</label>
     <input type="text" name="txtNombre" id="txtNombre">
     <br>
-    <label>Cantidad:</label>
-    <input type="text" name="txtCantidad" id="txtCantidad">
-    <br>
     <label>Precio:</label>
     <input type="text" name="txtPrecio" id="txtPrecio">
+    <br>
+    <label>Stock:</label>
+    <input type="text" name="txtStock" id="txtStock">
     <br>
 
     <label id="message"></label>
@@ -38,7 +38,7 @@
         $.ajax({
             method:"POST",
             url:"http://localhost/bodegacyg/bodegacyg/public_html/api/v1/producto",
-            data:{codigo:$("#txtCodigo").val(),nombre:$("#txtNombre").val(),cantidad:$("#txtCantidad").val(),precio:$("#txtPrecio").val()}
+            data:{codigo:$("#txtCodigo").val(),nombre:$("#txtNombre").val(),cantidad:$("#txtCantidad").val(),stock:$("#txtStock").val(),precio:$("#txtPrecio").val()}
         }).done(function(response){
             
             console.log(response);
@@ -46,8 +46,8 @@
             $("#message").text("El producto se registro correctamente");
             $("#txtCodigo").val("");
             $("#txtNombre").val("");
-            $("#txtCantidad").val("");
             $("#txtPrecio").val("");
+            $("#txtStock").val("");            
         });
     }
 
