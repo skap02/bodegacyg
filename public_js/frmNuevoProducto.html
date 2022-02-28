@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevos Productos</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+
+</head>
+<body>
+
+    <label>Codigo:</label>
+    <input type="text" name="txtCodigo" id="txtCodigo">
+    <br>
+    <label>Nombre:</label>
+    <input type="text" name="txtNombre" id="txtNombre">
+    <br>
+    <label>Precio:</label>
+    <input type="text" name="txtPrecio" id="txtPrecio">
+    <br>
+    <label>Stock:</label>
+    <input type="text" name="txtStock" id="txtStock">
+    <br>
+
+    <label id="message"></label>
+
+    <br>
+    <button id="bGuardar" onclick="guardar()">Guardar</button>
+
+<script type="text/javascript">
+    /*
+    $("bGuardar").click(function(){
+        //código de guardar
+    });
+*/
+    function guardar()
+    {
+        $.ajax({
+            method:"POST",
+            url:"http://localhost/bodegacyg/bodegacyg/public_html/api/v1/producto",
+            data:{codigo:$("#txtCodigo").val(),nombre:$("#txtNombre").val(),cantidad:$("#txtCantidad").val(),stock:$("#txtStock").val(),precio:$("#txtPrecio").val()}
+        }).done(function(response){
+            
+            console.log(response);
+
+            $("#message").text("El producto se registro correctamente");
+            $("#txtCodigo").val("");
+            $("#txtNombre").val("");
+            $("#txtPrecio").val("");
+            $("#txtStock").val("");            
+        });
+    }
+
+</script>
+
+</body>
+</html>
