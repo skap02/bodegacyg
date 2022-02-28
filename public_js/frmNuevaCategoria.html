@@ -31,11 +31,20 @@
     {
         $.ajax({
             method:"POST",
-            url:"http://localhost/bodegacyg/bodegacyg/public_html/api/v1/categoria",
+            url:"http://localhost/bodegacyg/public_html/api/v1/categoria",
             data:{codigo:$("#txtCodigo").val(),nombre:$("#txtNombre").val()}
         }).done(function(response){
             
             console.log(response);
+            
+            /*
+            if (("#txtCodigo")) {
+                $("#message").text("La categoria se registro correctamente");
+            }
+            else
+            {
+                $("#message").text("La categoria ya esta registrado");
+            }*/
 
             $("#message").text("La categoria se registro correctamente");
             $("#txtCodigo").val("");

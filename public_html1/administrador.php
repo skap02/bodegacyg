@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Birthstone&family=Festive&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Birthstone&family=Festive&display=swap" rel="stylesheet">
-    <title>Bodega CyG</title>
+    <title>Bodega CyG - Administrador</title>
     <link rel="preload" href="css/style.css" as="style">
     <link href="css/style.css" rel="stylesheet">
     <body bgcolor="black"></body>
@@ -23,11 +23,8 @@
     <!--   OCULTAR CODIGO  -->
 <div class="nav-bg">
     <nav class="navegacion-principal contenedor">
-        <a href="administrador.php">ADMINISTRADOR</a>
-        <a href="#">DESCRIPCIÓN</a>
-        <a href="#">PRODUCTOS</a>
-        <a href="#">PROMOCIONES</a>
-        <a href="#">CONTACTANOS</a>
+        <a href="http://localhost/bodegacyg/public_js/frmNuevoProducto.html">NUEVO PRODUCTO</a>
+        <a href="http://localhost/bodegacyg/public_js/frmNuevaCategoria.html">NUEVA CATEGORIA</a>
 
     </nav>
 </div>

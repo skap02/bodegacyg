@@ -11,7 +11,7 @@
 }
 /* Estilos generales */
 html {
-    font-size: 62.5%;
+    font-size: 100%;
 }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -31,6 +31,15 @@ html {
 #solicitar{
     background-color: #00fdb5;
 }
+/* Estilos para el registro de nuevos productos */
+#formulario{
+    text-align: center;
+}
+/* Estilos para atributos en el registro de productos */
+#atributo{
+    text-align: center;
+    color: white;
+}
 
 svg .facebook {
     width: 100%;
@@ -42,11 +51,12 @@ svg .facebook {
 }
 
 body {
-    font-size: 16px;
+    font-size: 15px;
     font-family: 'krub', sans-serif;
     /*background-image: linear-gradient(to top, var(--grisMasClaro) 0%, var(--blanco) 100% );*/
     /*background-image: url(../img/portada.jpg);*/
     background-size: cover;
+    line-height: normal;
     background-repeat: no-repeat;
     /*background position: center center;
     /*background-attachment: fixed;      desliza*/ 
