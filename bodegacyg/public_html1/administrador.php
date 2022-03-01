@@ -23,12 +23,10 @@
     <!--   OCULTAR CODIGO  -->
 <div class="nav-bg">
     <nav class="navegacion-principal contenedor">
-        <a href="administrador.php">ADMINISTRADOR</a>
-        <a href="#">DESCRIPCIÓN</a>
-        <a href="#">PRODUCTOS</a>
-        <a href="#">PROMOCIONES</a>
-        <a href="#">CONTACTANOS</a>
-
+        <a href="../public_js/frmNuevaCategoria.html">Nueva Categoria</a>
+        <a href="../public_js/frmNuevoProducto.html">Nuevo Producto</a>
+        <a href="index.php">Página Principal</a>
+       
     </nav>
 </div>
     <!-- Imagen de presentación  -->

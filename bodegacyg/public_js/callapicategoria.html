@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+
+</head>
+<body>
+    <script type="text/javascript">
+        $.ajax({
+            method:"GET",
+            url:"http://localhost/bodegacyg/bodegacyg/public_html/api/v1/categoria"
+        }).done(function(response){
+            for(i=0;i<response.data.length;i++){
+                document.write(response.data[i].nombre+"<br>");
+            }
+        });
+    </script>
+</body>
+</html>

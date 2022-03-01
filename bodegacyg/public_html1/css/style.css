@@ -31,7 +31,10 @@ html {
 #solicitar{
     background-color: #00fdb5;
 }
-
+/* Estilos de los productos */
+#formulario{
+    text-align: center;
+}
 svg .facebook {
     width: 100%;
     height: 100%;
