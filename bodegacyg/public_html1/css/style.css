@@ -98,14 +98,13 @@ h2,h3 {
 .boton {
     background-color: var(--secundario);
     color: var(--blanco);
-    padding: 0.65rem 2.5rem;
-    margin-top: 2rem;
-    font-size: 1.3rem;
+    padding: 0.65rem 1.5rem;
+    margin-top: 1.3rem;
+    font-size: 1.2rem;
     text-decoration: none;
     /*text-transform: uppercase;*/
     font-weight: bold;
     border-radius: 5rem;
-    width: 60px;
     text-align: center;
     border: none;
     /*margin-left: 116rem;
@@ -183,7 +182,7 @@ h2,h3 {
     background-image: url(../img/fondo01.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 1000px;
+    height: 600px;
     position: center;
     margin-bottom: 8rem;
 }
