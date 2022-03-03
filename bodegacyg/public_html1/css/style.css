@@ -11,7 +11,7 @@
 }
 /* Estilos generales */
 html {
-    font-size: 62.5%;
+    font-size: 100%;
 }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -31,10 +31,16 @@ html {
 #solicitar{
     background-color: #00fdb5;
 }
-/* Estilos de los productos */
+/* Estilos para el registro de nuevos productos */
 #formulario{
     text-align: center;
 }
+/* Estilos para atributos en el registro de productos */
+#atributo{
+    text-align: center;
+    color: white;
+}
+
 svg .facebook {
     width: 100%;
     height: 100%;
@@ -45,11 +51,12 @@ svg .facebook {
 }
 
 body {
-    font-size: 16px;
+    font-size: 15px;
     font-family: 'krub', sans-serif;
     /*background-image: linear-gradient(to top, var(--grisMasClaro) 0%, var(--blanco) 100% );*/
     /*background-image: url(../img/portada.jpg);*/
     background-size: cover;
+    line-height: normal;
     background-repeat: no-repeat;
     /*background position: center center;
     /*background-attachment: fixed;      desliza*/ 
@@ -75,13 +82,13 @@ h2,h3 {
 
 .titulo2{     /*ofertas*/
     text-align: center;
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-family: 'Anton', sans-serif;
     color: var(--secundario);
 }
 
 .contenedor {
-    max-width: 120rem;
+
     /*margin-top: -5rem;*/
     margin-right: auto;
     margin-bottom: 0;
@@ -91,14 +98,14 @@ h2,h3 {
 .boton {
     background-color: var(--secundario);
     color: var(--blanco);
-    padding: 1rem 2.5rem;
+    padding: 0.65rem 2.5rem;
     margin-top: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-decoration: none;
     /*text-transform: uppercase;*/
     font-weight: bold;
     border-radius: 5rem;
-    width: 70px;
+    width: 60px;
     text-align: center;
     border: none;
     /*margin-left: 116rem;
@@ -158,9 +165,9 @@ h2,h3 {
     text-align: center;
     color: var(--blanco);
     text-decoration: none;
-    font-size: 2rem;
-    font-weight: 700;
-    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 10px;
 }
 
 .navegacion-principal a:hover {
@@ -176,7 +183,7 @@ h2,h3 {
     background-image: url(../img/fondo01.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 400px;
+    height: 1000px;
     position: center;
     margin-bottom: 8rem;
 }
@@ -254,7 +261,7 @@ h2,h3 {
 
 .formulario {
     background-color: var(--grisclaro);
-    width: min( 60rem, 100%);
+    width: min( 40rem, 70%);
     margin: 0 auto;
     padding: 2rem;
     border-radius: 1rem;
@@ -266,9 +273,8 @@ h2,h3 {
 
 .formulario legend {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
-    font-weight: 700;
     margin-bottom: 2rem;
     color: var(--grisMasClaro);
 }

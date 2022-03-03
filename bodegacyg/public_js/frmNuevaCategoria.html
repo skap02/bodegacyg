@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../public_html1/">
     <link href="https://fonts.googleapis.com/css2?family=Birthstone&family=Festive&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Birthstone&family=Festive&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <title>Bodega CyG</title>
     <link rel="preload" href="../public_html1/css/style.css" as="style">
@@ -21,30 +21,32 @@
 
     <div class="nav-bg">
         <nav class="navegacion-principal contenedor">
-            <a href="frmNuevaCategoria.html">Nueva Categoria</a>
-            <a href="frmNuevoProducto.html">Nuevo Producto</a>
-            <a href="../public_html1/index.php">Página Principal</a>
-                
+            <a href="frmNuevaCategoria.html">NUEVA CATEGORIA</a>
+            <a href="frmNuevoProducto.html">NUEVO PRODUCTO</a>
+            <a href="../public_html1/index.php">PAGINA PRINCIPAL</a>
+            
         </nav>
     </div>
         <!-- Imagen de presentación  -->
-        <section class="tienda" id="formulario">
-            <div class="contenido-tienda mb-3">
-                <label for="disabledTextInput" class="form-label">Codigo:</label>
+        <section class="tienda">
+            <div class="contenido-tienda" id="formulario">
+            
+                <label class="col-sm-2 col-form-label">Codigo:</label>
                 <input type="text" name="txtCodigo" id="txtCodigo">
                 <br>
-                <label for="disabledTextInput" class="form-label">Nombre:</label>
+                <label class="col-sm-2 col-form-label">Nombre:</label>
                 <input type="text" name="txtNombre" id="txtNombre">
                 <br>
-               
+    
                 <label id="message"></label>
-            
+    
                 <br>
                 <button id="bGuardar" onclick="guardar()">Guardar</button>
+    
             </div>
-        </section>
+    </section>  
 
-
+    
 
 <script type="text/javascript">
     /*
@@ -56,11 +58,20 @@
     {
         $.ajax({
             method:"POST",
-            url:"http://localhost/bodegacyg/bodegacyg/public_html/api/v1/categoria",
+            url:"http://localhost/bodegacyg/public_html/api/v1/categoria",
             data:{codigo:$("#txtCodigo").val(),nombre:$("#txtNombre").val()}
         }).done(function(response){
             
             console.log(response);
+            
+            /*
+            if (("#txtCodigo")) {
+                $("#message").text("La categoria se registro correctamente");
+            }
+            else
+            {
+                $("#message").text("La categoria ya esta registrado");
+            }*/
 
             $("#message").text("La categoria se registro correctamente");
             $("#txtCodigo").val("");

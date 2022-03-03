@@ -84,7 +84,7 @@ class CategoriaController extends Controller
 		if($categoria){
 			$response->success=false;
 			$response->errors=[];
-			$response->errors[]="Ya existe una categoria con el código - ".$request->codigo." - o con el nombre - ".$request->nombre." -";
+			$response->errors[]="Ya existe un producto con el código - ".$request->codigo." - o con el nombre - ".$request->nombre." -";
 			return response()->json($response,400);
 		}
 

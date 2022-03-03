@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Birthstone&family=Festive&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Birthstone&family=Festive&display=swap" rel="stylesheet">
-    <title>Bodega CyG</title>
+    <title>Bodega CyG - Administrador</title>
     <link rel="preload" href="css/style.css" as="style">
     <link href="css/style.css" rel="stylesheet">
     <body bgcolor="black"></body>
@@ -19,14 +19,12 @@
 <!--    <header class="dtv">
         <img class="logo" src="img/logo1.png">
     </header>    -->
-
     <!--   OCULTAR CODIGO  -->
 <div class="nav-bg">
     <nav class="navegacion-principal contenedor">
-        <a href="../public_js/frmNuevaCategoria.html">Nueva Categoria</a>
-        <a href="../public_js/frmNuevoProducto.html">Nuevo Producto</a>
-        <a href="index.php">Página Principal</a>
-       
+        <a href="http://localhost/bodegacyg/bodegacyg/public_js/frmNuevoProducto.html">NUEVO PRODUCTO</a>
+        <a href="http://localhost/bodegacyg/bodegacyg/public_js/frmNuevaCategoria.html">NUEVA CATEGORIA</a>
+        <a href="index.php">PÁGINA PRINCIPAL</a>
     </nav>
 </div>
     <!-- Imagen de presentación  -->
@@ -40,7 +38,6 @@
     <main class="contenedor sombra">
         <br>
         <h2 class="titulo2" id="oferta">OFERTAS DEL MES</h2>
-
         <div class="ofertas">
     <!-- Primera iamgen -->
         <section class="productos">            
@@ -67,11 +64,10 @@
     <!-- Formulario -->
         <section>
             <h2 class="titulo2" id="oferta">Contacto</h2>
-
             <form class="formulario">
                 <fieldset>
                     <legend>Rellene el Formulario</legend> 
-                <div class="contenedor-campos">
+                <div class="contenedor-campos ">
                     <div class="campos">
                     <!-- Nombre -->    
                         <label>Nombre</label>
@@ -93,11 +89,10 @@
                         <textarea class="input-text"></textarea>
                     </div>
                 </div>
-
                 <!--contenedor de campos-->
             
                 <div class="alinear-derecha flex">
-                    <input class="boton w-sm-100" type="submit" value="Enviar">
+                    <input class="btn btn-outline-secondary" type="submit" value="Enviar">
                 </div>
                
                 </fieldset>
