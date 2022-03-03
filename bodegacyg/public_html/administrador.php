@@ -23,10 +23,17 @@
     <!--   OCULTAR CODIGO  -->
 <div class="nav-bg">
     <nav class="navegacion-principal contenedor">
+<<<<<<< HEAD:bodegacyg/public_html/administrador.php
         <a href="../public_js/frmNuevaCategoria.html">Nueva Categoria</a>
         <a href="../public_js/frmNuevoProducto.html">Nuevo Producto</a>
         <a href="index.php">Página Principal</a>
        
+=======
+        <a href="http://localhost/bodegacyg/bodegacyg/public_js/frmNuevoProducto.html">NUEVO PRODUCTO</a>
+        <a href="http://localhost/bodegacyg/bodegacyg/public_js/frmNuevaCategoria.html">NUEVA CATEGORIA</a>
+        <a href="index.php">PÁGINA PRINCIPAL</a>
+
+>>>>>>> d86790f99ce584f4ca2456124f3d234b800ce70a:bodegacyg/public_html1/administrador.php
     </nav>
 </div>
     <!-- Imagen de presentación  -->
@@ -71,7 +78,7 @@
             <form class="formulario">
                 <fieldset>
                     <legend>Rellene el Formulario</legend> 
-                <div class="contenedor-campos">
+                <div class="contenedor-campos ">
                     <div class="campos">
                     <!-- Nombre -->    
                         <label>Nombre</label>
@@ -97,7 +104,7 @@
                 <!--contenedor de campos-->
             
                 <div class="alinear-derecha flex">
-                    <input class="boton w-sm-100" type="submit" value="Enviar">
+                    <input class="btn btn-outline-secondary" type="submit" value="Enviar">
                 </div>
                
                 </fieldset>

@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuevos Productos</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="preload" href="../public_html1/css/normalize.css" as="style">
     <link rel="stylesheet" href="../public_html1/css/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Birthstone&family=Festive&display=swap" rel="stylesheet">
@@ -17,6 +16,7 @@
     <body bgcolor="black"></body>
 </head>
 <body>
+<<<<<<< HEAD:bodegacyg/public_js/frmNuevoProducto.html
     <div class="nav-bg">
     <nav class="navegacion-principal contenedor">
             <a href="frmNuevaCategoria.html">NUEVA CATEGORIA</a>
@@ -25,6 +25,16 @@
             
     </nav>
 </div>
+=======
+    <div class="nav-bg ">
+        <nav class="navegacion-principal contenedor">
+            <a href="http://localhost/bodegacyg/bodegacyg/public_js/frmNuevoProducto.html">NUEVO PRODUCTO</a>
+            <a href="http://localhost/bodegacyg/bodegacyg/public_js/frmNuevaCategoria.html">NUEVA CATEGORIA</a>
+            <a href="../public_html1/index.php">PÁGINA PRINCIPAL</a>
+
+        </nav>
+    </div>
+>>>>>>> d86790f99ce584f4ca2456124f3d234b800ce70a:public_js/frmNuevoProducto.html
 <section class="tienda">
         <div class="contenido-tienda" id="formulario">
         
@@ -41,10 +51,10 @@
             <input type="text" name="txtStock" id="txtStock">
             <br>
 
-            <label id="message"></label>
+            <label class="fs-5 text-info bg-secondary col-md-3" id="message"></label>
 
             <br>
-            <button id="bGuardar" onclick="guardar()">Guardar</button>
+            <button class="btn btn-outline-secondary" id="bGuardar" onclick="guardar()">Guardar</button>
 
         </div>
 </section>  
@@ -60,7 +70,7 @@
     {
         $.ajax({
             method:"POST",
-            url:"http://localhost/bodegacyg/public_html/api/v1/producto",
+            url:"http://localhost/bodegacyg/bodegacyg/public_html/api/v1/producto",
             data:{codigo:$("#txtCodigo").val(),nombre:$("#txtNombre").val(),cantidad:$("#txtCantidad").val(),stock:$("#txtStock").val(),precio:$("#txtPrecio").val()}
         }).done(function(response){
             

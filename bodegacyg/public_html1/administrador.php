@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Birthstone&family=Festive&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Birthstone&family=Festive&display=swap" rel="stylesheet">
+<<<<<<< HEAD
     <title>Bodega CyG - Administrador</title>
+=======
+    <title>Bodega CyG</title>
+>>>>>>> d86790f99ce584f4ca2456124f3d234b800ce70a
     <link rel="preload" href="css/style.css" as="style">
     <link href="css/style.css" rel="stylesheet">
     <body bgcolor="black"></body>
@@ -19,12 +23,30 @@
 <!--    <header class="dtv">
         <img class="logo" src="img/logo1.png">
     </header>    -->
+<<<<<<< HEAD
     <!--   OCULTAR CODIGO  -->
 <div class="nav-bg">
     <nav class="navegacion-principal contenedor">
         <a href="http://localhost/bodegacyg/bodegacyg/public_js/frmNuevoProducto.html">NUEVO PRODUCTO</a>
         <a href="http://localhost/bodegacyg/bodegacyg/public_js/frmNuevaCategoria.html">NUEVA CATEGORIA</a>
         <a href="index.php">PÁGINA PRINCIPAL</a>
+=======
+
+    <!--   OCULTAR CODIGO  -->
+<div class="nav-bg">
+    <nav class="navegacion-principal contenedor">
+<<<<<<< HEAD:bodegacyg/public_html/administrador.php
+        <a href="../public_js/frmNuevaCategoria.html">Nueva Categoria</a>
+        <a href="../public_js/frmNuevoProducto.html">Nuevo Producto</a>
+        <a href="index.php">Página Principal</a>
+       
+=======
+        <a href="http://localhost/bodegacyg/bodegacyg/public_js/frmNuevoProducto.html">NUEVO PRODUCTO</a>
+        <a href="http://localhost/bodegacyg/bodegacyg/public_js/frmNuevaCategoria.html">NUEVA CATEGORIA</a>
+        <a href="index.php">PÁGINA PRINCIPAL</a>
+
+>>>>>>> d86790f99ce584f4ca2456124f3d234b800ce70a:bodegacyg/public_html1/administrador.php
+>>>>>>> d86790f99ce584f4ca2456124f3d234b800ce70a
     </nav>
 </div>
     <!-- Imagen de presentación  -->
@@ -38,6 +60,10 @@
     <main class="contenedor sombra">
         <br>
         <h2 class="titulo2" id="oferta">OFERTAS DEL MES</h2>
+<<<<<<< HEAD
+=======
+
+>>>>>>> d86790f99ce584f4ca2456124f3d234b800ce70a
         <div class="ofertas">
     <!-- Primera iamgen -->
         <section class="productos">            
@@ -64,6 +90,10 @@
     <!-- Formulario -->
         <section>
             <h2 class="titulo2" id="oferta">Contacto</h2>
+<<<<<<< HEAD
+=======
+
+>>>>>>> d86790f99ce584f4ca2456124f3d234b800ce70a
             <form class="formulario">
                 <fieldset>
                     <legend>Rellene el Formulario</legend> 
@@ -89,6 +119,10 @@
                         <textarea class="input-text"></textarea>
                     </div>
                 </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> d86790f99ce584f4ca2456124f3d234b800ce70a
                 <!--contenedor de campos-->
             
                 <div class="alinear-derecha flex">
