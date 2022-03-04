@@ -24,8 +24,8 @@
     <!--   OCULTAR CODIGO  -->
 <div class="nav-bg">
     <nav class="navegacion-principal contenedor">
-        <a href="http://localhost/bodegacyg/bodegacyg/public_js/frmNuevoProducto.html">NUEVO PRODUCTO</a>
         <a href="http://localhost/bodegacyg/bodegacyg/public_js/frmNuevaCategoria.html">NUEVA CATEGORIA</a>
+        <a href="http://localhost/bodegacyg/bodegacyg/public_js/frmNuevoProducto.html">NUEVO PRODUCTO</a>        
         <a href="http://localhost/bodegacyg/bodegacyg/public_html1/">PÁGINA PRINCIPAL</a>
 
 </div>
