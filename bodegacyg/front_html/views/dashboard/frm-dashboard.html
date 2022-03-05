@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
+<html>
+ <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bodega CyG | Administrador</title>
 
- <!-- Google Font: Source Sans Pro -->
+  <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   
   <!-- Font Awesome -->
@@ -17,17 +16,18 @@
 
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
 
-</head>
+
 <body class="hold-transition sidebar-mini">
-  <div id="modalContainer1">
-</div>
+
 <div class="wrapper">
 
-  <div id="header"></div>
-  
-  <div id="mainMenu"></div>
 
- 
+<div id="header"></div>
+
+<div id="mainMenu"></div>
+
+
+  
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     
@@ -36,51 +36,39 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Categorias</h1>
+            <h1>Dashboard</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Categorias</li>
+              <li class="breadcrumb-item active">Dashboard</li>
             </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
 
-
     <!-- Main content -->
     <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12" style="text-align: right;padding-bottom: 20px;">
-            <button>Nueva Categoria</button>
-          </div>
-          
-        </div>
-          <div class="row">
-          
-            <div class="col-md-12">
+    	<div class="container-fluid">
+    		
+        
+        <H1> CONTENIDO DEL DASHBOARD</H1>
 
-              <table id="listCategorias">
-                <thead>
-                  <th>Fecha</th>
-                  <th>Codigo</th>
-                  <th>Nombre</th>
-                  <th>Acciones</th>
-                </thead>
-              </table>
 
-            </div>
-          
-          </div>
-      </div>
-  </section>
+    	</div>
+	</section>
 </div>
+
+
 
 <div id="footer"></div>
 
+
+
+
 </div>
+
 
 <!-- jQuery -->
 <script src="../../assets/plugins/jquery/jquery.min.js"></script>
@@ -93,14 +81,13 @@
 <!-- fullCalendar 2.2.5 -->
 <script src="../../assets/plugins/moment/moment.min.js"></script>
 
-<!-- Tabla a mostrar -->
-<script type="text/javascript" src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
 
-<script type="text/javascript" src="http://localhost/bodegacyg/bodegacyg/front_html/app/layout/main-layout-controller.js"></script>
+<script type="text/javascript" src="../../app/layout/main-layout-controller.js"></script>
 
-<script type="text/javascript" src="http://localhost/bodegacyg/bodegacyg/front_html/app/categorias/categorias-controller.js"></script>
+
+
+<script type="text/javascript" src="../../app/productos/productos-controller.js"></script>
 
 </body>
 </html>
-
-

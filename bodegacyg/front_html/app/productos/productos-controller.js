@@ -1,41 +1,191 @@
 $(document).ready(function(){
 
-$('#listProductos').DataTable({
+var TABLE_PRODUCTOS;
+var ID_ELIMINAR_PRODUCTO;
+var CARGAR_ID_PRODUCTO;
 
-	"ajax":{
-		type: 'get',
-		url: "http://localhost/bodegacyg/bodegacyg/public_html/api/v1/producto",
-		dataSrc: 'data',
-		cache: true
-		},
-	columns: [
-		{
+
+$(document).ready(function(){
+
+TABLE_PRODUCTOS=$('#listProductos').DataTable( {
+        "ajax":{
+            type: 'get',
+            url: APIS_URL+"/v1/producto",
+            headers: {
+                    Authorization: 'Bearer '+_access_token
+            },
+            dataSrc: 'data',
+            cache: true
+            },
+        columns: [
+            {
                 "render": function ( data, type, row ) {
-                    return row.created_at;
-                },
+                    //return row.created_at;
+
+                    return moment(row.created_at).format('DD/MM/YYYY HH:mm:ss');
+                },                
                 "targets": 0
             },
-		{ data: 'codigo' },
-		{ data: 'nombre' },
-		{ 
+            { data: 'codigo' },
+            { data: 'nombre' },
+            {
                 "render": function ( data, type, row ) {
-                    if (row.categorias) {
-                    	return row.categorias.nombre;
+                    
+
+                    if(row.categoria)
+                    {
+
+                        return row.categoria.nombre;
                     }
-                    else{
-                    	return "--sin categoria--";
+                    else
+                    {
+                        return "";
                     }
-                },
+                    
+                },                
                 "targets": 3
-           },
-         { data: 'precio' },
-         { data: 'stock' },
-         {  "render": function ( data, type, row ) {
-                    return "<a href='#'>Editar</a> | <a href='#'>Eliminar</a>";
-                },
-                "targets": 6}
-	]
+            },
+            { data: 'precio' },
+            { data: 'stock' },
+            {
+                "targets": 6,
+                "render": function ( data, type, row ) {
+                    
+                    return "<a href='#' onclick=\"showEditarProducto('"+row.id+"')\">Editar</a> | <a href='#' onclick=\"confirmarEliminacion('"+row.id+"')\">Eliminar</a>"
+                    
+                }                
+            },
+        ]
+
+    });
+
+
 
 });
 
-});
+
+
+function showNewProducto()
+{
+    console.log("entro a nuevo producto");
+
+    
+
+    var url="/views/productos/frm-new-producto.html?v=3.0";
+
+    $('#modalContainer1').load(url, function (result) {
+
+        $('#mdCreate').modal({ show: true,  backdrop: 'static', size: 'lg', keyboard: false });
+    });
+}
+
+
+function showEditarProducto(id)
+{
+    CARGAR_ID_PRODUCTO=id;
+
+    var url="/views/productos/frm-editar-producto.html?v=3.2";
+
+    $('#modalContainer1').load(url, function (result) {
+
+        $('#mdCreate').modal({ show: true,  backdrop: 'static', size: 'lg', keyboard: false });
+        
+        loadDataProducto();
+
+    });
+}
+
+
+
+function loadDataProducto()
+{
+    var _args={
+        callback:function(data)
+        {
+             $.each(data, function (i, item) {
+
+                $("#ddlCategoria").append(new Option(item.nombre, item.id));
+            
+              });
+
+             getDataProducto();
+        }
+    };
+
+    loadCategorias(_args);
+
+}
+
+function getDataProducto()
+{
+    $.ajax({
+            method:"GET",
+            headers: {
+                    Authorization: 'Bearer '+_access_token
+            },
+            url:APIS_URL+"/v1/producto/"+CARGAR_ID_PRODUCTO
+            }).done(function(response){
+
+                //console.log(response.data);
+                $('#ddlCategoria option[value='+response.data.categoria_id+']').prop('selected', 'selected');
+
+                $("#txtCodigo").val(response.data.codigo);
+                $("#txtNombre").val(response.data.nombre);
+                $("#txtPrecio").val(response.data.precio);
+                
+            });
+}
+
+
+function updateDataTable()
+{
+    TABLE_PRODUCTOS.ajax.reload();
+}
+
+
+function confirmarEliminacion(id)
+{
+    ID_ELIMINAR_PRODUCTO=id;
+
+     var url="/views/productos/frm-confirmar-eliminar.html";
+
+    $('#modalContainer1').load(url, function (result) {
+
+        $('#mdCreate').modal({ show: true,  backdrop: 'static', size: 'lg', keyboard: false });
+    });
+}
+
+function eliminarProducto()
+{
+    $.ajax({
+            method:"DELETE",
+            headers: {
+                    Authorization: 'Bearer '+_access_token
+            },
+            url:APIS_URL+"/api/v1/productos/"+ID_ELIMINAR_PRODUCTO
+            }).done(function(response){
+                
+              
+                $('#mdCreate').modal('hide');
+
+                updateDataTable();
+            });
+}
+
+
+
+function loadCategorias(params)
+{
+    $.ajax({
+            method:"GET",
+            headers: {
+                    Authorization: 'Bearer '+_access_token
+            },
+            url:APIS_URL+"/api/v1/categorias"
+            }).done(function(response){
+
+                if(params.callback)
+                    params.callback(response.data);
+            
+            });
+}

@@ -4,13 +4,13 @@
 
 <div class="modal-header">   
 
-<h4><b>Nuevo producto</b></h4>             
+<h4><b>Editar producto</b></h4>             
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
 
-  <div class="modal-body">
+	<div class="modal-body">
              
 
               <form id="frmNewProducto">
@@ -18,7 +18,7 @@
                 <div class="card-body">
 
 
-                  <div class="row">
+                	<div class="row">
 
                     <div class="col-md-12">
                       <div class="form-group">
@@ -30,19 +30,19 @@
                       </div>
                     </div>
 
-                    <div class="col-md-12">
-                      <div class="form-group">
-                          <label for="txtCodigo">Código</label>
-                          <input type="text" name="txtCodigo" class="form-control" id="txtCodigo" placeholder="Ingrese el código">
-                      </div>
-                    </div>
+                		<div class="col-md-12">
+                			<div class="form-group">
+		                    	<label for="txtCodigo">Código</label>
+			                    <input type="text" name="txtCodigo" class="form-control" id="txtCodigo" placeholder="Ingrese el código">
+			                </div>
+                		</div>
 
-                    <div class="col-md-12">
-                      <div class="form-group">
-                          <label for="txtNombre">Nombre</label>
-                          <input type="text" name="txtNombre" class="form-control" id="txtNombre" placeholder="Ingrese el nombre">
-                      </div>
-                    </div>
+                		<div class="col-md-12">
+                			<div class="form-group">
+		                    	<label for="txtNombre">Nombre</label>
+			                    <input type="text" name="txtNombre" class="form-control" id="txtNombre" placeholder="Ingrese el nombre">
+			                </div>
+                		</div>
 
                     <div class="col-md-12">
                       <div class="form-group">
@@ -59,8 +59,8 @@
                     </div>
 
 
-                    
-                  </div>
+                		
+                	</div>
 
                   
 
@@ -90,67 +90,40 @@
 <script>
 
 
-$(document).ready(function(){
-
-  var _params={};
-   
-   _params.callback=function(data) {
-     
-
-    $.each(data, function (i, item) {
-
-        $("#ddlCategoria").append(new Option(item.nombre, item.id));
-    
-      });
-
-
-
-   }
-
-  loadCategorias(_params);
-
-});
-
-
 $(function () {
   $.validator.setDefaults({
     submitHandler: function () {
       
 
-      $.ajax({
-      method:"POST",
+    	$.ajax({
+			method:"PUT",
       headers: {
                     Authorization: 'Bearer '+_access_token
             },
-      url:APIS_URL+"http://localhost/bodegacyg/bodegacyg/public_html/api/v1/producto",
-      data:{
+			url:APIS_URL+"http://localhost/bodegacyg/bodegacyg/public_html/api/v1/producto",
+			data:{
+        id:CARGAR_ID_PRODUCTO,
+        categoria_id:$("#ddlCategoria").val(),
         codigo:$("#txtCodigo").val(),
         nombre:$("#txtNombre").val(),
-        precio:$("#txtPrecio").val(),
-        categoria_id:$("#ddlCategoria").val()
+        precio:$("#txtPrecio").val()
       }
-      
-      }).done(function(response){
-        
-        $("#txtCodigo").val("");
-        $("#txtNombre").val("");
+			}).done(function(response){
+				
+				$("#txtCodigo").val("");
+				$("#txtNombre").val("");
         $("#txtPrecio").val("");
 
-
-        $('#mdCreate').modal('hide');
+				$('#mdCreate').modal('hide');
 
         updateDataTable();
-      });
+			});
 
 
     }
   });
   $('#frmNewProducto').validate({
     rules: {
-      ddlCategoria: {
-        required: true,
-        valueNotEquals: "" 
-      },
       txtCodigo: {
         required: true
       },
@@ -160,14 +133,8 @@ $(function () {
       txtPrecio: {
         required: true
       },
-      txtStock: {
-        required: true
-      },
     },
     messages: {
-      ddlCategoria: {
-        required: "Seleccione una categoría"
-      },
       txtCodigo: {
         required: "Ingrese el código por que es obligatorio"
       },
@@ -176,9 +143,6 @@ $(function () {
       },
       txtPrecio: {
         required: "Ingrese el precio"
-      },
-      txtStock: {
-        required: "Ingrese el stock"
       }
     },
     errorElement: 'span',
