@@ -1,14 +1,17 @@
-var TABLE_CATEGORIAS;
-var ID_ELIMINAR_CATEGORIA;
-var CARGAR_ID_CATEGORIA;
+$(document).ready(function(){
 
+var TABLE_PRODUCTOS;
+var ID_ELIMINAR_PRODUCTO;
+var CARGAR_ID_PRODUCTO;
+
+})
 
 $(document).ready(function(){
 
 TABLE_CATEGORIAS=$('#listCategorias').DataTable( {
         "ajax":{
             type: 'get',
-            url: APIS_URL+"/v1/categoria",
+            url: APIS_URL+"/api/v1/categoria",
             dataSrc: 'data',
             cache: true
             },
@@ -113,7 +116,7 @@ function eliminarCategoria()
             headers: {
                     Authorization: 'Bearer '+_access_token
             },
-            url:APIS_URL+"/v1/categoria"+ID_ELIMINAR_CATEGORIA
+            url:APIS_URL+"/api/v1/categoria"+ID_ELIMINAR_CATEGORIA
             }).done(function(response){
                 
               

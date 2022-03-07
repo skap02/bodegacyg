@@ -4,13 +4,14 @@ var TABLE_PRODUCTOS;
 var ID_ELIMINAR_PRODUCTO;
 var CARGAR_ID_PRODUCTO;
 
+})
 
 $(document).ready(function(){
 
 TABLE_PRODUCTOS=$('#listProductos').DataTable( {
         "ajax":{
             type: 'get',
-            url: APIS_URL+"/v1/producto",
+            url: APIS_URL+"/api/v1/producto",
             headers: {
                     Authorization: 'Bearer '+_access_token
             },
@@ -71,7 +72,7 @@ function showNewProducto()
 
     
 
-    var url="/views/productos/frm-new-producto.html?v=3.0";
+    var url="http://localhost/bodegacyg/bodegacyg/front_html/views/productos/frm-new-producto.html";
 
     $('#modalContainer1').load(url, function (result) {
 
@@ -84,7 +85,7 @@ function showEditarProducto(id)
 {
     CARGAR_ID_PRODUCTO=id;
 
-    var url="/views/productos/frm-editar-producto.html?v=3.2";
+    var url="http://localhost/bodegacyg/bodegacyg/front_html/views/productos/frm-editar-producto.html";
 
     $('#modalContainer1').load(url, function (result) {
 
@@ -123,7 +124,7 @@ function getDataProducto()
             headers: {
                     Authorization: 'Bearer '+_access_token
             },
-            url:APIS_URL+"/v1/producto/"+CARGAR_ID_PRODUCTO
+            url:APIS_URL+"/api/v1/producto/"+CARGAR_ID_PRODUCTO
             }).done(function(response){
 
                 //console.log(response.data);
@@ -147,7 +148,7 @@ function confirmarEliminacion(id)
 {
     ID_ELIMINAR_PRODUCTO=id;
 
-     var url="/views/productos/frm-confirmar-eliminar.html";
+     var url="http://localhost/bodegacyg/bodegacyg/front_html/views/productos/frm-confirmar-eliminar.html?id"+id;
 
     $('#modalContainer1').load(url, function (result) {
 
@@ -162,7 +163,7 @@ function eliminarProducto()
             headers: {
                     Authorization: 'Bearer '+_access_token
             },
-            url:APIS_URL+"/api/v1/productos/"+ID_ELIMINAR_PRODUCTO
+            url:APIS_URL+"/api/v1/producto/"+ID_ELIMINAR_PRODUCTO
             }).done(function(response){
                 
               
@@ -181,7 +182,7 @@ function loadCategorias(params)
             headers: {
                     Authorization: 'Bearer '+_access_token
             },
-            url:APIS_URL+"/api/v1/categorias"
+            url:APIS_URL+"/api/v1/categoria"
             }).done(function(response){
 
                 if(params.callback)
