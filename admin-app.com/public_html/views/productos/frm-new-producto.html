@@ -1,0 +1,242 @@
+<div id="mdCreate" class="modal fade" role="dialog">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+
+<div class="modal-header">   
+
+<h4><b>Nuevo producto</b></h4>             
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+	<div class="modal-body">
+             
+
+              <form id="frmNewProducto">
+
+                <div class="card-body">
+
+
+                	<div class="row">
+
+                    <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="ddlCategoria">Imagen</label>
+                          <input type="file" name="fImagen" id="fImagen">
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="ddlCategoria">Categoría</label>
+                          <select class="custom-select" id="ddlCategoria">
+                            <option value="" selected>Selecciona una opcion...</option>
+                            
+                          </select>
+                      </div>
+                    </div>
+
+                		<div class="col-md-12">
+                			<div class="form-group">
+		                    	<label for="txtCodigo">Código</label>
+			                    <input type="text" name="txtCodigo" class="form-control" id="txtCodigo" placeholder="Ingrese el código">
+			                </div>
+                		</div>
+
+                		<div class="col-md-12">
+                			<div class="form-group">
+		                    	<label for="txtNombre">Nombre</label>
+			                    <input type="text" name="txtNombre" class="form-control" id="txtNombre" placeholder="Ingrese el nombre">
+			                </div>
+                		</div>
+
+                    <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="txtPrecio">Precio</label>
+                          <input type="number" name="txtPrecio" class="form-control" id="txtPrecio" placeholder="Ingrese el precio">
+                      </div>
+                    </div>
+
+
+                		
+                	</div>
+
+                  
+
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Guardar</button>
+
+                  <button type="button" class="btn btn-secondary" onclick="$('#mdCreate').modal('hide');">Cancelar</button>
+                </div>
+
+
+
+              </form>
+
+  </div>
+
+
+</div>
+</div>
+
+</div>
+
+
+
+
+<script>
+
+
+$(document).ready(function(){
+
+  var _params={};
+   
+   _params.callback=function(data) {
+     
+
+    $.each(data, function (i, item) {
+
+        $("#ddlCategoria").append(new Option(item.nombre, item.id));
+    
+      });
+
+
+
+   }
+
+  loadCategorias(_params);
+
+});
+
+
+$(function () {
+  $.validator.setDefaults({
+    submitHandler: function () {
+     
+     producto= 
+      {
+        codigo:$("#txtCodigo").val(),
+        nombre:$("#txtNombre").val(),
+        precio:$("#txtPrecio").val(),
+        categoria_id:$("#ddlCategoria").val()
+      };
+      
+      var fileInput = document.getElementById('fImagen');
+      var fileMeta={};
+
+      
+      if(!fileInput)
+      {
+        saveProducto(producto);
+        return;
+      }
+      else
+      {
+        fileInfo=fileInput.files[0];
+
+        arrayName=fileInfo.name.split(".");
+
+        fileMeta.nombre=arrayName[0];
+        fileMeta.extension=arrayName[1];
+
+        fileMeta.size=fileInfo.size;
+      }
+
+      //console.log(fileInput.files[0])
+      
+      var reader = new FileReader();
+      reader.readAsDataURL(fileInput.files[0]);
+
+      reader.onload = function (arg) {
+       
+        imageData = reader.result;
+        arryImageData=imageData.split(",");
+
+        fileMeta.data=arryImageData[1];
+
+        producto.image=fileMeta;
+
+        saveProducto(producto);
+      
+
+
+      };
+    
+      
+    }
+  });
+
+
+  function saveProducto(producto)
+  {
+    $.ajax({
+      method:"POST",
+      headers: {
+                    Authorization: 'Bearer '+_access_token
+            },
+      url:APIS_URL+"/api/v1/productos",
+      
+      data:producto
+      
+      }).done(function(response){
+        
+        $("#txtCodigo").val("");
+        $("#txtNombre").val("");
+        $("#txtPrecio").val("");
+
+
+        $('#mdCreate').modal('hide');
+
+        updateDataTable();
+      });
+  }
+
+  $('#frmNewProducto').validate({
+    rules: {
+      ddlCategoria: {
+        required: true,
+        valueNotEquals: "" 
+      },
+      txtCodigo: {
+        required: true
+      },
+      txtNombre: {
+        required: true
+      },
+      txtPrecio: {
+        required: true
+      },
+    },
+    messages: {
+      ddlCategoria: {
+        required: "Seleccione una categoría"
+      },
+      txtCodigo: {
+        required: "Ingrese el código por que es obligatorio"
+      },
+      txtNombre: {
+        required: "Ingrese el nombre"
+      },
+      txtPrecio: {
+        required: "Ingrese el precio"
+      }
+    },
+    errorElement: 'span',
+    errorPlacement: function (error, element) {
+      error.addClass('invalid-feedback');
+      element.closest('.form-group').append(error);
+    },
+    highlight: function (element, errorClass, validClass) {
+      $(element).addClass('is-invalid');
+    },
+    unhighlight: function (element, errorClass, validClass) {
+      $(element).removeClass('is-invalid');
+    }
+  });
+});
+
+</script>
+
